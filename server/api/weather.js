@@ -1,21 +1,52 @@
 const axios = require("axios");
+const mongoose = require("mongoose")
+const mongo = require("mongodb")
+const WEATHER = require("../models/Weather")
+require("dotenv").config({path:"../.env"})
 
 let baseUrl = "https://api.collectapi.com"
 
 class Weather{
-
-     getWeatherData = async(language,city) =>{
-
+    
+    saveWeatherDataToMongo = async(CityName,data) =>{
+        const filter={
+            city: CityName
+        }
+        const replace = {
+            ...filter,
+            ...data,
+            data: Date.now()
+        }
+        await this.findOneReplace(filter,replace);
+    }
+    
+    getWeatherData = async(language,city) =>{
+        
         let Url = `${baseUrl}/weather/getWeather?data.lang=${language}&data.city=${city}`;
         let Data = await axios.get(Url,{
             headers:{
                 "content-type":"application/json",
-                "authorization": "apikey 1AYAGlpnYtZyZ3RrrrIfCn:1CjHXCkms7F3MaTnEvyfk5"
+                "authorization": process.env.API_KEY
             }
-
+            
         })
-        return(Data)
-     }
-}
+        return(Data.data)
+    }
 
+     getWeatherDataFromMongo = async (CityName) => {
+         try {
+             return await WEATHER.findOne({city: CityName});   
+             
+         } catch (error) {
+             console.log(error)
+         }
+    }
+
+   
+     
+     async findOneReplace(filter,replace){
+         await WEATHER.findOneAndReplace(filter,replace,{new: true, upsert: true})
+     }
+
+}
 module.exports = Weather;
