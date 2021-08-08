@@ -1,0 +1,38 @@
+.Weather_form{
+    height: 40vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.form{
+    display: flex;
+    flex-direction: row;
+}
+.form>label{
+    font-size: 34px;
+}
+.formInput{
+    font-size: 34px;
+    border: 1px solid black;
+}
+::-webkit-input-placeholder{
+    font-size: 24px;
+}
+.formInput>select{
+    font-size: 34px;
+    border:none;
+}
+.formInput>input{
+    font-size: 34px;
+    border:none;
+    border-right: 1px solid black;
+}
+.form_btn{
+    background-color: #0275d8;
+    border:none;
+    color:white;
+    font-size: 20px;
+    padding: 10px 20px;
+    margin: 20px;
+    border-radius: 10px;
+}

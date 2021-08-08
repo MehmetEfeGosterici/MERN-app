@@ -6,8 +6,9 @@ const Weather = require("./weather");
 router.get("/weather", async(req,res)=>{
     try {
         let weather = new Weather();
-        let weatherData = await weather.getWeatherData("tr","berlin");
-        res.json(weatherData.data)
+        let weatherData = await weather.getWeatherData("tr","riga");
+        res.json(weatherData)
+        console.log(weatherData)
         
     } catch (error) {
         console.log(error)
@@ -22,7 +23,7 @@ router.post("/weatherMongo", async(req,res)=>{
     const {language,cityName} = req.body
     let weather = new Weather()
     let weatherData = await weather.getWeatherData(language,cityName)
-    console.log(weatherData) 
+    //console.log(weatherData) 
     weather.saveWeatherDataToMongo(cityName,weatherData)
     res.header("Content-Type",'application/json');
     res.json(weatherData);

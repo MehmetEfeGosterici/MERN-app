@@ -1,12 +1,13 @@
 import Header from "./Header"
-import Weather_form from "./Weather_form";
+import Weather_form from "./WeatherForm";
 import './App.css';
+import Body from "./Body";
 
 function App() {
   return (
     <div className="App">
       <Header/>
-      <Weather_form/>
+      <Body/>
     </div>
   );
 }
