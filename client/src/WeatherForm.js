@@ -43,7 +43,7 @@ function Weather_form() {
                     <label htmlFor="city">City: </label>
                     <div className="formInput" >
                         <input onChange={formCity} value={fcity} size={30}  name="city" placeholder="Enter a city name"/>
-                        <select onChange={formLanguage} value={flanguage}>
+                        <select defaultValue={"Tr"} onChange={formLanguage} value={flanguage}>
                             <option>Tr</option>
                             <option>En</option>
                             <option>De</option>

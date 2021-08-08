@@ -1,4 +1,16 @@
 .Weather_info{
-    border:1px solid black;
-    margin: 10px
+    margin: 10px;
+    display:flex;
+    flex-direction: column;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 5px 5px 10px 0px black;
+    width: 11vw;
+}
+.Weather_icon>img{
+    height:100px;
+    object-fit: cover;
+}
+.current_weather{
+    text-align: center;
 }
