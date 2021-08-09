@@ -2,7 +2,7 @@ import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import WeatherPanel from './WeatherPanel'
 import WeatherInfo from "./WeatherInfo"
-import "./Weather_form.css"
+import "../styles/Weather_form.css"
 
 function Weather_form() {
     var weatherdata = [];

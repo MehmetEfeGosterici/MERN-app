@@ -1,5 +1,5 @@
 import React from 'react'
-import "./Weather_info.css"
+import "../styles/Weather_info.css"
 
 function Weather_info({date,day,description,degree,max,min,night,humidity,icon}) {
     return (

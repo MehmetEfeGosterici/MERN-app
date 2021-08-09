@@ -1,6 +1,5 @@
 import Header from "./Header"
-import Weather_form from "./WeatherForm";
-import './App.css';
+import '../styles/App.css';
 import Body from "./Body";
 
 function App() {

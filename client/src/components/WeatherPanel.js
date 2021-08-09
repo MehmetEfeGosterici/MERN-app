@@ -1,6 +1,6 @@
 import React from 'react'
 import WeatherInfo from './WeatherInfo'
-import "./Weather_panel.css"
+import "../styles/Weather_panel.css"
 
 function Weather_panel({data}) {
     console.log(data)
