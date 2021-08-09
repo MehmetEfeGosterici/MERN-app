@@ -5,7 +5,7 @@
     padding: 10px;
     border-radius: 20px;
     box-shadow: 5px 5px 10px 0px black;
-    width: 11vw;
+    min-width: 11vw;
 }
 .Weather_icon>img{
     height:100px;
