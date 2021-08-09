@@ -15,10 +15,9 @@
 .formInput{
     display: flex;
     align-items: center;
-    height: 40px;
     border: 1px solid black;
     border-radius: 15px;
-    padding: 0px 5px;
+    padding: 5px 5px;
 }
 ::-webkit-input-placeholder{
     font-size: 24px;
@@ -32,6 +31,7 @@
     outline: none;
 }
 .formInput>input{
+    display: flex;
     font-size: 24px;
     border:none;
     border-right: 1px solid black;
@@ -48,7 +48,26 @@
     margin: 20px;
     border-radius: 10px;
 }
+.formü:focus{
+    outline: none;
+}
 
 @media (max-width:590px){
-    
+    .form>label{
+        font-size: 24px;
+    }
+    .formInput>input{
+        font-size: 20px;;
+    }
+    .formInput>select{
+        font-size: 16px;
+    }
+    .form_btn{
+        font-size: 16px;
+        padding: 10px 15px;
+    }
+    ::-webkit-input-placeholder{
+        font-size: 16px;
+    }
+
 }
