@@ -12,12 +12,8 @@ app.use(cors())
 app.use(express.json());
 app.use("/api",apis)
 
-app.get("/" ,(req,res)=>{
-    res.json("success")
-})
-
 app.use(express.static(path.join(__dirname, '../client/build')));
-app.get('*', function(req, res) {
+app.get('/*', function(req, res) {
     res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
 });
 
