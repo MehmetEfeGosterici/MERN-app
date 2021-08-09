@@ -1,10 +1,10 @@
 require("dotenv/config");
 const mongoose = require("mongoose")
 const express = require("express");
+const cors = require("cors")
+const path = require("path")
 const app = express();
 const apis = require("./api");
-require("dotenv/config")
-const cors = require("cors")
 
 const port = process.env.PORT || 5000;
 
@@ -15,6 +15,14 @@ app.use("/api",apis)
 app.get("/" ,(req,res)=>{
     res.json("success")
 })
+
+if (process.env.NODE_ENV === 'production') {
+    app.use(express.static(path.join(__dirname, '../client/build')));
+
+    app.get('*', function(req, res) {
+        res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+    });
+}
 
 mongoose.connect(process.env.DB_CONNECT, {
     useNewUrlParser: true,
