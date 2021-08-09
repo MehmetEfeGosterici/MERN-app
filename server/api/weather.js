@@ -1,6 +1,4 @@
 const axios = require("axios");
-const mongoose = require("mongoose")
-const mongo = require("mongodb")
 const WEATHER = require("../models/Weather")
 require("dotenv").config({path:"../.env"})
 
